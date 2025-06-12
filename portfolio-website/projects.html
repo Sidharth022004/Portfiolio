@@ -1,72 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects | Sidharth</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-style" disabled>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Projects | Sidharth</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">SIDHARTH</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
-                    <li><a href="certificates.html">Certificates</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <button id="dark-mode-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon"></i>
-            </button>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+  <!-- Header -->
+  <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50 transition duration-300 ease-in-out">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold transition-all duration-500 hover:scale-105">SIDHARTH</div>
+      <nav>
+        <ul class="flex gap-6 text-sm font-medium">
+          <li><a href="index.html" class="hover:text-blue-500 transition">Home</a></li>
+          <li><a href="projects.html" class="text-blue-600 dark:text-blue-400">Projects</a></li>
+          <li><a href="certificates.html" class="hover:text-blue-500 transition">Certificates</a></li>
+          <li><a href="contact.html" class="hover:text-blue-500 transition">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="dark-mode-toggle" class="text-xl transition hover:rotate-12" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-center mb-12 animate-fade-in">My Projects</h1>
+
+    <section class="grid md:grid-cols-2 gap-12">
+      <!-- Project Card 1 -->
+      <article class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden flex flex-col md:flex-row transform hover:scale-[1.02] transition-all duration-300">
+        <img src="assets/project1.jpg" alt="TechSpark 2024" class="md:w-1/2 w-full object-cover">
+        <div class="p-6 space-y-4">
+          <h2 class="text-2xl font-semibold">TechSpark 2024</h2>
+          <p class="text-sm">Annual college tech fest with 300+ participants featuring coding competitions, workshops, and tech talks.</p>
+          <ul class="text-sm space-y-1">
+            <li><strong>Role:</strong> Lead Organizer</li>
+            <li><strong>Technologies:</strong> Event Management, Digital Marketing</li>
+            <li><strong>Outcome:</strong> 40% increase in participation</li>
+          </ul>
+          <a href="#" class="inline-block mt-3 px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">View Details</a>
         </div>
-    </header>
+      </article>
 
-    <main class="container">
-        <h1>My Projects</h1>
-        
-        <section class="projects">
-            <article class="project-card">
-                <div class="project-image">
-                    <img src="assets/project1.jpg" alt="TechSpark 2024">
-                </div>
-                <div class="project-content">
-                    <h2>TechSpark 2024</h2>
-                    <p>Annual college tech fest with 300+ participants featuring coding competitions, workshops, and tech talks.</p>
-                    <ul class="project-details">
-                        <li><strong>Role:</strong> Lead Organizer</li>
-                        <li><strong>Technologies:</strong> Event Management, Digital Marketing</li>
-                        <li><strong>Outcome:</strong> 40% increase in participation</li>
-                    </ul>
-                    <a href="#" class="btn">View Details</a>
-                </div>
-            </article>
+      <!-- Project Card 2 -->
+      <article class="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden flex flex-col md:flex-row transform hover:scale-[1.02] transition-all duration-300">
+        <img src="assets/project2.jpg" alt="IBM Campaign" class="md:w-1/2 w-full object-cover">
+        <div class="p-6 space-y-4">
+          <h2 class="text-2xl font-semibold">IBM Digital Marketing Campaign</h2>
+          <p class="text-sm">Sample social media campaigns created during IBM SkillBuild internship.</p>
+          <ul class="text-sm space-y-1">
+            <li><strong>Role:</strong> Marketing Intern</li>
+            <li><strong>Technologies:</strong> Meta Business Suite, Google Analytics</li>
+            <li><strong>Outcome:</strong> 25%+ simulated engagement</li>
+          </ul>
+          <a href="#" class="inline-block mt-3 px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">View Certificate</a>
+        </div>
+      </article>
+    </section>
+  </main>
 
-            <article class="project-card">
-                <div class="project-image">
-                    <img src="assets/project2.jpg" alt="Digital Marketing Campaign">
-                </div>
-                <div class="project-content">
-                    <h2>IBM Digital Marketing Campaign</h2>
-                    <p>Sample social media campaigns created during IBM SkillBuild internship.</p>
-                    <ul class="project-details">
-                        <li><strong>Role:</strong> Marketing Intern</li>
-                        <li><strong>Technologies:</strong> Meta Business Suite, Google Analytics</li>
-                        <li><strong>Outcome:</strong> 25%+ simulated engagement</li>
-                    </ul>
-                    <a href="#" class="btn">View Certificate</a>
-                </div>
-            </article>
-        </section>
-    </main>
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-800 py-6 mt-16 transition duration-300">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p>&copy; 2024 Sidharth. All rights reserved.</p>
+      <div class="flex space-x-4 text-xl">
+        <a href="#" class="hover:text-blue-500 transition"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="hover:text-gray-700 transition"><i class="fab fa-github"></i></a>
+        <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
 
-    <footer>
-        <!-- Same footer as index.html -->
-    </footer>
+  <!-- Dark Mode Script -->
+  <script>
+    const toggle = document.getElementById("dark-mode-toggle");
+    const html = document.documentElement;
+    toggle.addEventListener("click", () => {
+      html.classList.toggle("dark");
+    });
+  </script>
 
-    <script src="js/dark-mode.js"></script>
+  <style>
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-in {
+      animation: fade-in 1s ease-out both;
+    }
+  </style>
 </body>
 </html>

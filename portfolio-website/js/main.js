@@ -1,30 +1,35 @@
-// Mobile menu toggle functionality
-document.addEventListener('DOMContentLoaded', function() {
+// Mobile menu toggle functionality + Smooth scrolling
+document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.createElement('button');
     menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-    menuToggle.classList.add('menu-toggle');
+    menuToggle.className = 'menu-toggle text-xl md:hidden ml-auto';
     menuToggle.setAttribute('aria-label', 'Toggle menu');
-    
-    const header = document.querySelector('header .container');
-    if (header) {
-        header.prepend(menuToggle);
+
+    const headerContainer = document.querySelector('header .container');
+    const nav = document.querySelector('nav ul');
+
+    if (headerContainer && nav) {
+        headerContainer.appendChild(menuToggle);
+
+        // Add mobile class to nav for styling
+        nav.classList.add('mobile-nav');
+        
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
     } else {
-        console.warn('The header element does not contain a .container child.');
+        console.warn('Header or nav element missing.');
     }
-    
-    const nav = document.querySelector('nav');
-    
-    menuToggle.addEventListener('click', function() {
-        nav.classList.toggle('active');
-    });
-    
-    // Smooth scrolling for anchor links
+
+    // Smooth scrolling for anchor links (only if #id exists on page)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href').slice(1);
+            const target = document.getElementById(targetId);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 });

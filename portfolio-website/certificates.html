@@ -1,74 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Certificates | Sidharth</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-style" disabled>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Certificates | Sidharth</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' };
+  </script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">SIDHARTH</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="certificates.html" class="active">Certificates</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <button id="dark-mode-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon"></i>
-            </button>
-        </div>
-    </header>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition duration-300">
 
-    <main class="container">
-        <h1>My Certificates</h1>
-        
-        <div class="certificate-filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="digital">Digital Marketing</button>
-            <button class="filter-btn" data-filter="event">Event Management</button>
-            <button class="filter-btn" data-filter="technical">Technical</button>
-        </div>
+  <!-- Header -->
+  <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold">SIDHARTH</div>
+      <nav>
+        <ul class="flex gap-6 text-sm font-medium">
+          <li><a href="index.html" class="hover:text-blue-500">Home</a></li>
+          <li><a href="projects.html" class="hover:text-blue-500">Projects</a></li>
+          <li><a href="certificates.html" class="text-blue-600 dark:text-blue-400">Certificates</a></li>
+          <li><a href="contact.html" class="hover:text-blue-500">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="dark-mode-toggle" class="text-xl" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+    </div>
+  </header>
 
-        <section class="certificates-grid">
-            <div class="certificate-card" data-category="digital">
-                <div class="certificate-image">
-                    <img src="assets/ibm-cert.jpg" alt="IBM Digital Marketing Certificate">
-                </div>
-                <div class="certificate-details">
-                    <h3>Digital Marketing Fundamentals</h3>
-                    <p class="issuer">IBM SkillBuild</p>
-                    <p class="date">April 2024</p>
-                    <a href="https://online.publuu.com/525833/1178154" target="_blank" class="btn">View Certificate</a>
-                </div>
-            </div>
+  <!-- Main -->
+  <main class="max-w-6xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-center mb-10">My Certificates</h1>
 
-            <div class="certificate-card" data-category="event">
-                <div class="certificate-image">
-                    <img src="assets/isp-cert.jpg" alt="ISP Webinar Certificate">
-                </div>
-                <div class="certificate-details">
-                    <h3>ISP Webinar Host</h3>
-                    <p class="issuer">Internshala</p>
-                    <p class="date">2024</p>
-                    <a href="https://drive.google.com/file/d/1Pfipcdqtc-R3Vq82nLielX002M_lGO8S/view?usp=sharing" target="_blank" class="btn">View Certificate</a>
-                </div>
-            </div>
+    <!-- Filters -->
+    <div class="flex justify-center gap-4 flex-wrap mb-10">
+      <button class="filter-btn bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition" data-filter="all">All</button>
+      <button class="filter-btn bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-md hover:bg-blue-500 hover:text-white transition" data-filter="digital">Digital Marketing</button>
+      <button class="filter-btn bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-md hover:bg-blue-500 hover:text-white transition" data-filter="event">Event Management</button>
+      <button class="filter-btn bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-md hover:bg-blue-500 hover:text-white transition" data-filter="technical">Technical</button>
+    </div>
 
-            <!-- Add all other certificates following the same pattern -->
-        </section>
-    </main>
+    <!-- Certificates Grid -->
+    <section class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 certificates-grid">
+      <div class="certificate-card fade-in rounded-xl shadow-md dark:bg-gray-800 p-4 border border-gray-200 dark:border-gray-700" data-category="digital">
+        <img src="assets/ibm-cert.jpg" alt="IBM Certificate" class="rounded-md mb-4">
+        <h3 class="text-lg font-semibold">Digital Marketing Fundamentals</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">IBM SkillBuild</p>
+        <p class="text-xs text-gray-400 mb-3">April 2024</p>
+        <button class="view-certificate text-blue-500 hover:underline text-sm" data-url="https://online.publuu.com/525833/1178154">View Certificate</button>
+      </div>
 
-    <footer>
-        <!-- Same footer as index.html -->
-    </footer>
+      <div class="certificate-card fade-in rounded-xl shadow-md dark:bg-gray-800 p-4 border border-gray-200 dark:border-gray-700" data-category="event">
+        <img src="assets/isp-cert.jpg" alt="ISP Certificate" class="rounded-md mb-4">
+        <h3 class="text-lg font-semibold">ISP Webinar Host</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Internshala</p>
+        <p class="text-xs text-gray-400 mb-3">2024</p>
+        <button class="view-certificate text-blue-500 hover:underline text-sm" data-url="https://drive.google.com/file/d/1Pfipcdqtc-R3Vq82nLielX002M_lGO8S/view?usp=sharing">View Certificate</button>
+      </div>
+    </section>
+  </main>
 
-    <script src="js/dark-mode.js"></script>
-    <script src="js/certificates.js"></script>
+  <!-- Modal -->
+  <div id="certificate-modal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm hidden items-center justify-center z-50">
+    <div class="bg-white dark:bg-gray-800 rounded-xl max-w-2xl w-full p-6 relative">
+      <button class="absolute top-3 right-4 text-gray-600 dark:text-gray-300 text-2xl" id="close-modal">&times;</button>
+      <iframe id="certificate-frame" class="w-full h-[500px]" frameborder="0"></iframe>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-800 py-6 mt-16">
+    <div class="max-w-6xl mx-auto px-4 text-center text-sm">
+      &copy; 2025 Sidharth. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const toggle = document.getElementById("dark-mode-toggle");
+    toggle.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+    });
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const cards = document.querySelectorAll(".certificate-card");
+
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const category = button.getAttribute("data-filter");
+        filterButtons.forEach(btn => btn.classList.remove("bg-blue-600", "text-white"));
+        button.classList.add("bg-blue-600", "text-white");
+
+        cards.forEach(card => {
+          card.classList.toggle("hidden", category !== "all" && card.dataset.category !== category);
+        });
+      });
+    });
+
+    // Intersection Observer for fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Modal Logic
+    const modal = document.getElementById("certificate-modal");
+    const modalFrame = document.getElementById("certificate-frame");
+    const closeModal = document.getElementById("close-modal");
+
+    document.querySelectorAll(".view-certificate").forEach(button => {
+      button.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        modalFrame.src = button.getAttribute("data-url");
+      });
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      modalFrame.src = "";
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.add("hidden");
+        modalFrame.src = "";
+      }
+    });
+  </script>
 </body>
 </html>

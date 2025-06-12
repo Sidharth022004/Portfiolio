@@ -1,26 +1,108 @@
 :root {
     --primary-color: #3b82f6;
-    --secondary-color: #2563eb;
+    --secondary-color: #60a5fa;
     --text-color: #e2e8f0;
+    --muted-text-color: #a0aec0;
     --bg-color: #1a202c;
     --card-bg: #2d3748;
     --border-color: #4a5568;
+    --input-bg: #2d3748;
     --shadow-color: rgba(0, 0, 0, 0.3);
+    --hover-bg: #4a5568;
 }
 
+/* Body & Layout */
 body {
     color: var(--text-color);
     background-color: var(--bg-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.skill-card, .project-card, .certificate-card {
+/* Cards (Skills, Projects, Certificates) */
+.skill-card,
+.project-card,
+.certificate-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: transform 0.3s ease;
 }
 
-.contact-form input, 
+.skill-card:hover,
+.project-card:hover,
+.certificate-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Inputs and Form */
+.contact-form input,
 .contact-form textarea {
-    background-color: var(--card-bg);
+    background-color: var(--input-bg);
     color: var(--text-color);
-    border-color: var(--border-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--muted-text-color);
+}
+
+/* Buttons */
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Navbar */
+header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+nav ul li a {
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: var(--hover-bg);
+}
+
+/* Footer */
+footer {
+    background-color: var(--card-bg);
+    color: var(--muted-text-color);
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+footer .social-links a {
+    color: var(--text-color);
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: var(--primary-color);
 }

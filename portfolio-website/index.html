@@ -1,93 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidharth | Digital Marketer & Event Coordinator</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-style" disabled>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sidharth | Digital Marketer & Event Coordinator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">SIDHARTH</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="certificates.html">Certificates</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <button id="dark-mode-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon"></i>
-            </button>
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+  <!-- Header -->
+  <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold">SIDHARTH</div>
+      <nav>
+        <ul class="flex gap-6 text-sm font-medium">
+          <li><a href="index.html" class="text-blue-600 dark:text-blue-400">Home</a></li>
+          <li><a href="projects.html" class="hover:text-blue-500">Projects</a></li>
+          <li><a href="certificates.html" class="hover:text-blue-500">Certificates</a></li>
+          <li><a href="contact.html" class="hover:text-blue-500">Contact</a></li>
+        </ul>
+      </nav>
+      <button id="dark-mode-toggle" class="text-xl" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="max-w-7xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-12">
+    <div class="flex-1 space-y-5">
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Hi, I'm Sidharth</h1>
+      <h2 class="text-xl md:text-2xl text-blue-600 dark:text-blue-400 font-semibold">BCA Student | Digital Marketer | Event Coordinator</h2>
+      <p class="text-gray-600 dark:text-gray-300 max-w-md">
+        Tech-savvy professional with certifications in digital marketing and proven event management experience.
+      </p>
+      <div class="flex gap-4">
+        <a href="contact.html" class="bg-blue-600 text-white px-6 py-2 rounded-xl hover:bg-blue-700 transition">Contact Me</a>
+        <a href="certificates.html" class="border border-blue-600 text-blue-600 px-6 py-2 rounded-xl hover:bg-blue-100 dark:hover:bg-gray-700 transition">View Certificates</a>
+      </div>
+    </div>
+    <div class="flex-1">
+      <img src="assets/profile.jpg" alt="Sidharth's profile" class="rounded-2xl shadow-lg w-full max-w-sm mx-auto" />
+    </div>
+  </main>
+
+  <!-- Skills Section -->
+  <section class="bg-gray-100 dark:bg-gray-800 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-10 text-center">Core Skills</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-md text-center">
+          <i class="fas fa-bullhorn text-4xl text-blue-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Digital Marketing</h3>
+          <ul class="text-sm space-y-1">
+            <li>Social Media Strategy</li>
+            <li>Campaign Analytics</li>
+            <li>Content Creation</li>
+          </ul>
         </div>
-    </header>
-
-    <main class="container">
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Hi, I'm Sidharth</h1>
-                <h2>BCA Student | Digital Marketer | Event Coordinator</h2>
-                <p>Tech-savvy professional with certifications in digital marketing and proven event management experience.</p>
-                <div class="cta-buttons">
-                    <a href="contact.html" class="btn primary">Contact Me</a>
-                    <a href="certificates.html" class="btn secondary">View Certificates</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="assets/profile.jpg" alt="Sidharth's profile picture">
-            </div>
-        </section>
-
-        <section class="skills">
-            <h2>Core Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="fas fa-bullhorn"></i>
-                    <h3>Digital Marketing</h3>
-                    <ul>
-                        <li>Social Media Strategy</li>
-                        <li>Campaign Analytics</li>
-                        <li>Content Creation</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-calendar-check"></i>
-                    <h3>Event Management</h3>
-                    <ul>
-                        <li>Logistics Planning</li>
-                        <li>Vendor Coordination</li>
-                        <li>Team Leadership</li>
-                    </ul>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Technical Skills</h3>
-                    <ul>
-                        <li>MS Office Suite</li>
-                        <li>Basic Data Analysis</li>
-                        <li>PowerPoint Design</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Sidharth. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
+        <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-md text-center">
+          <i class="fas fa-calendar-check text-4xl text-green-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Event Management</h3>
+          <ul class="text-sm space-y-1">
+            <li>Logistics Planning</li>
+            <li>Vendor Coordination</li>
+            <li>Team Leadership</li>
+          </ul>
         </div>
-    </footer>
+        <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-md text-center">
+          <i class="fas fa-laptop-code text-4xl text-purple-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Technical Skills</h3>
+          <ul class="text-sm space-y-1">
+            <li>MS Office Suite</li>
+            <li>Basic Data Analysis</li>
+            <li>PowerPoint Design</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="js/dark-mode.js"></script>
-    <script src="js/main.js"></script>
+  <!-- Footer -->
+  <footer class="bg-white dark:bg-gray-900 py-6">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p>&copy; 2024 Sidharth. All rights reserved.</p>
+      <div class="flex space-x-4 text-xl">
+        <a href="#" class="hover:text-blue-500"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="hover:text-gray-600"><i class="fab fa-github"></i></a>
+        <a href="#" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Final Dark Mode Toggle Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggle = document.getElementById("dark-mode-toggle");
+      const html = document.documentElement;
+      const icon = toggle.querySelector("i");
+
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const useDark = savedTheme === "dark" || (!savedTheme && prefersDark);
+
+      if (useDark) {
+        html.classList.add("dark");
+        icon.classList.replace("fa-moon", "fa-sun");
+      } else {
+        html.classList.remove("dark");
+        icon.classList.replace("fa-sun", "fa-moon");
+      }
+
+      toggle.addEventListener("click", () => {
+        html.classList.toggle("dark");
+        const isDark = html.classList.contains("dark");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+        icon.classList.replace(isDark ? "fa-moon" : "fa-sun", isDark ? "fa-sun" : "fa-moon");
+      });
+    });
+  </script>
 </body>
 </html>

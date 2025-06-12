@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me | Sidharth</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    };
+  </script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition duration-300">
+
+  <!-- Header -->
+  <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold">SIDHARTH</div>
+      <nav>
+        <ul class="flex gap-6 text-sm font-medium">
+          <li><a href="index.html" class="hover:text-blue-500">Home</a></li>
+          <li><a href="projects.html" class="hover:text-blue-500">Projects</a></li>
+          <li><a href="certificates.html" class="hover:text-blue-500">Certificates</a></li>
+          <li><a href="contact.html" class="hover:text-blue-500">Contact</a></li>
+          <li><a href="about.html" class="text-blue-600 dark:text-blue-400">About</a></li>
+        </ul>
+      </nav>
+      <button id="dark-mode-toggle" class="text-xl" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-center mb-10">About Me</h1>
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <img src="your-profile-image.jpg" alt="Sidharth" class="w-full rounded-xl shadow-lg">
+      <div class="space-y-4 text-lg">
+        <p>Hey there! I’m <strong>Sidharth</strong>, a passionate front-end developer and tech enthusiast based in New Delhi, India. I love crafting beautiful, responsive websites with modern tools like <strong>Tailwind CSS</strong>, <strong>JavaScript</strong>, and <strong>React</strong>.</p>
+
+        <p>Currently, I’m sharpening my skills in UI/UX design and diving deep into full-stack development. My portfolio reflects a blend of creativity, logic, and real-world projects that showcase my growth journey.</p>
+
+        <p>Apart from coding, I enjoy leading college tech fests, presenting in PPT competitions (2× winner 😎), and working in collaborative environments as a team coordinator.</p>
+
+        <p>I’m all about learning, sharing knowledge, and building tech that solves real problems. Let's connect and build something amazing together!</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-800 py-6 mt-16">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p>&copy; 2025 Sidharth. All rights reserved.</p>
+      <div class="flex space-x-4 text-xl">
+        <a href="#" class="hover:text-blue-500"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="hover:text-gray-700"><i class="fab fa-github"></i></a>
+        <a href="#" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dark Mode Script -->
+  <script>
+    const toggle = document.getElementById("dark-mode-toggle");
+    const icon = toggle.querySelector("i");
+
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      document.documentElement.classList.add('dark');
+      icon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    toggle.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+
+      if (document.documentElement.classList.contains('dark')) {
+        localStorage.setItem('darkMode', 'enabled');
+        icon.classList.replace('fa-moon', 'fa-sun');
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+        icon.classList.replace('fa-sun', 'fa-moon');
+      }
+    });
+  </script>
+
+</body>
+</html>
