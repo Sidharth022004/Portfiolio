@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Certificates | Sidharth</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css" id="dark-mode-style" disabled>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">SIDHARTH</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="certificates.html" class="active">Certificates</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="dark-mode-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>My Certificates</h1>
+        
+        <div class="certificate-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="digital">Digital Marketing</button>
+            <button class="filter-btn" data-filter="event">Event Management</button>
+            <button class="filter-btn" data-filter="technical">Technical</button>
+        </div>
+
+        <section class="certificates-grid">
+            <div class="certificate-card" data-category="digital">
+                <div class="certificate-image">
+                    <img src="assets/ibm-cert.jpg" alt="IBM Digital Marketing Certificate">
+                </div>
+                <div class="certificate-details">
+                    <h3>Digital Marketing Fundamentals</h3>
+                    <p class="issuer">IBM SkillBuild</p>
+                    <p class="date">April 2024</p>
+                    <a href="https://online.publuu.com/525833/1178154" target="_blank" class="btn">View Certificate</a>
+                </div>
+            </div>
+
+            <div class="certificate-card" data-category="event">
+                <div class="certificate-image">
+                    <img src="assets/isp-cert.jpg" alt="ISP Webinar Certificate">
+                </div>
+                <div class="certificate-details">
+                    <h3>ISP Webinar Host</h3>
+                    <p class="issuer">Internshala</p>
+                    <p class="date">2024</p>
+                    <a href="https://drive.google.com/file/d/1Pfipcdqtc-R3Vq82nLielX002M_lGO8S/view?usp=sharing" target="_blank" class="btn">View Certificate</a>
+                </div>
+            </div>
+
+            <!-- Add all other certificates following the same pattern -->
+        </section>
+    </main>
+
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="js/dark-mode.js"></script>
+    <script src="js/certificates.js"></script>
+</body>
+</html>
